@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -61,11 +62,12 @@ class MyHomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<CounterBloc>().add(Increment());
+          context.read<CounterBloc>().add(const CounterEvent.incriment());
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), 
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
